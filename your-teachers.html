@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Web Starter Kit">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#2F3BA2">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <!-- Material Design Components -->
+    <link rel="stylesheet" href="node_modules/material-components-web/dist/material-components-web.css">
+    <script src="node_modules/material-components-web/dist/material-components-web.js"></script>
+    <script>mdc.autoInit()</script>
+    <script src="styles/mdc.css.js"></script>
+
+    <!-- Material Design icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Firebase -->
+
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyD7iTuQUsBWq1Rxi9f-OTsLcyCN7_MfWWw",
+        authDomain: "edusocio-ef966.firebaseapp.com",
+        databaseURL: "https://edusocio-ef966.firebaseio.com",
+        projectId: "edusocio-ef966",
+        storageBucket: "edusocio-ef966.appspot.com",
+        messagingSenderId: "876204725574"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <!-- Your styles -->
+    <script   src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/main.css">
+    <script type="text/javascript" src="styles/main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+
+    <title>Assignment | EduSocio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <script type="text/javascript">
+    function logOutFunction() {
+      firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+      window.location.assign('thankyou.html');
+      }).catch(function(error) {
+      // An error happened.
+      console.log(error);
+      });
+    }
+
+    function sendEmailVerification() {
+      // [START sendemailverification]
+      firebase.auth().currentUser.sendEmailVerification().then(function() {
+
+        alert('Email Verification Sent!');
+        // [END_EXCLUDE]
+      });
+      // [END sendemailverification]
+    }
+
+      var ell = document.getElementById('quickstart-verify-email');
+
+      if (ell) {
+          ell.addEventListener('click', sendEmailVerification, false);
+      }
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        // [START_EXCLUDE silent]
+        // [END_EXCLUDE]
+        if (user) {
+          // User is signed in.
+          var displayName = user.displayName;
+          var email = user.email;
+          var emailVerified = user.emailVerified;
+          var photoURL = user.photoURL;
+          var isAnonymous = user.isAnonymous;
+          var uid = user.uid;
+          var providerData = user.providerData;
+          if (emailVerified) {
+            document.getElementById('quickstart-verify-email').style.display = "none";
+          } else {
+            document.getElementById('quickstart-verify-email').removeClass("display");
+          }
+          // [END_EXCLUDE]
+        }
+        // [START_EXCLUDE silent]
+        // [END_EXCLUDE]
+      });
+
+
+
+    </script>
+    <style media="screen">
+      .register-cover {
+        background:#fff;
+        background-color: #fff;
+        color: #fff;
+      }
+      .marginltr {
+        margin-left: 5em;
+        margin-right: 5em;
+        margin-top: 5em;
+        margin-bottom: 5em;
+      }
+      body {
+        background-color: #FFF;
+      }
+
+      .abs {
+        position: absolute;
+        top: 42em;
+        left: 49em;
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/assign.css">
+  </head>
+  <body class="demo element smoothscroll">
+
+    <div class="register-cover">
+      <h2 class="register-cover_title"><b>Edu</b>Socio</h2>
+      <!-- MDL Progress Bar with Indeterminate Progress -->
+      <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate register-cover_bar"></div>
+      <p class="register-cover_legal">© Copyright (c) 2017 Copyright EduSocio All Rights Reserved.</p>
+    </div>
+
+
+
+    <div id="demo-content">
+
+      		<div id="content">
+            <!-- Uses a header that contracts as the page scrolls down. -->
+            <div class="demo-layout-waterfall mdl-layout mdl-js-layout">
+            <header class="mdl-layout__header mdl-layout__header--waterfall">
+              <!-- Top row, always visible -->
+              <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title"><i class="material-icons">bubble_chart</i> <b>Edu</b>Socio - A Students Panel</span>
+                <div class="mdl-layout-spacer"></div>
+
+                <button id="quickstart-verify-email" onclick="sendEmailVerification();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                <i class="material-icons">contact_mail</i> Send Email Verification
+                </button>
+                <!-- Accent-colored raised button with ripple -->
+                  <button id="logOutBtn" onclick="logOutFunction();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                  <i class="material-icons">person</i> Log Out
+                  </button>
+
+              </div>
+              <!-- Bottom row, not visible on scroll -->
+              <div class="mdl-layout__header-row">
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation -->
+                <nav class="mdl-navigation">
+                  <a class="mdl-navigation__link" href="index.html"><i class="material-icons">home</i> Home</a>
+                  <a class="mdl-navigation__link highletedtext" href="assignments.html"><b><i class="material-icons">assignment</i> Assignments</b></a>
+                  <a class="mdl-navigation__link" href="your-teachers.html"><i class="material-icons">face</i> Your Teachers</a>
+                  <a class="mdl-navigation__link" href="forum.html"><i class="material-icons">record_voice_over</i> Disscussion</a>
+                  <a class="mdl-navigation__link" href="ptd.html"><i class="material-icons">people</i> Parent Teacher Disscussion</a>
+                </nav>
+              </div>
+            </header>
+            <div class="mdl-layout__drawer">
+              <span class="mdl-layout-title"><i class="material-icons">bubble_chart</i> <b>Edu</b>Socio</span>
+              <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="index.html">Home</a>
+                <a class="mdl-navigation__link" href="about.html">About</a>
+                <a class="mdl-navigation__link" href="updates.html">Updates</a>
+                <a class="mdl-navigation__link" href="contact-us.html">Contact Us</a>
+              </nav>
+            </div>
+            <div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button"><i class="material-icons">apps</i></div>
+            <main class="mdl-layout__content">
+              <div class="page-content">
+
+                <section class="banner full">
+                  <article class="">
+                    <img src="images/edusocio-teachers.jpg" alt="">
+                    <h2 class="assign_txt">Your Teachers</h2>
+                  </article>
+                </section>
+
+                <section class="marginltr">
+                  <!-- Three Line List with secondary info and action -->
+                  <style>
+                  .demo-list-three {
+                    width: 600px;
+                  }
+                  </style>
+
+                  <ul class="demo-list-three mdl-list">
+                    <li class="mdl-list__item mdl-list__item--three-line">
+                      <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-avatar">person</i>
+                        <span>Name</span>
+                        <span class="mdl-list__item-text-body">
+                          Subjects: Subject Name
+                        </span>
+                      </span>
+                      <span class="mdl-list__item-secondary-content">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="#"><i class="material-icons">star</i></a>
+                      </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--three-line">
+                      <span class="mdl-list__item-primary-content">
+                        <i class="material-icons  mdl-list__item-avatar">person</i>
+                        <span>Aaron Paul</span>
+                        <span class="mdl-list__item-text-body">
+                          Aaron Paul played the role of Jesse in Breaking Bad. He also featured in
+                          the "Need For Speed" Movie.
+                        </span>
+                      </span>
+                      <span class="mdl-list__item-secondary-content">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="#"><i class="material-icons">star</i></a>
+                      </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--three-line">
+                      <span class="mdl-list__item-primary-content">
+                        <i class="material-icons  mdl-list__item-avatar">person</i>
+                        <span>Bob Odenkirk</span>
+                        <span class="mdl-list__item-text-body">
+                          Bob Odinkrik played the role of Saul in Breaking Bad. Due to public fondness for the
+                          character, Bob stars in his own show now, called "Better Call Saul".
+                        </span>
+                      </span>
+                      <span class="mdl-list__item-secondary-content">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="#"><i class="material-icons">star</i></a>
+                      </span>
+                    </li>
+                  </ul>
+
+                  <div class="abs">
+                  <!-- Three Line List with secondary info and action -->
+                  <style>
+                  .demo-list-three {
+                    width: 600px;
+                  }
+                  </style>
+
+                  <ul class="demo-list-three mdl-list">
+                    <li class="mdl-list__item mdl-list__item--three-line">
+                      <span class="mdl-list__item-primary-content">
+                        <i class="material-icons mdl-list__item-avatar">person</i>
+                        <span>Second</span>
+                        <span class="mdl-list__item-text-body">
+                          Bryan Cranston played the role of Walter in Breaking Bad. He is also known
+                          for playing Hal in Malcom in the Middle.
+                        </span>
+                      </span>
+                      <span class="mdl-list__item-secondary-content">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="#"><i class="material-icons">star</i></a>
+                      </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--three-line">
+                      <span class="mdl-list__item-primary-content">
+                        <i class="material-icons  mdl-list__item-avatar">person</i>
+                        <span>Aaron Paul</span>
+                        <span class="mdl-list__item-text-body">
+                          Aaron Paul played the role of Jesse in Breaking Bad. He also featured in
+                          the "Need For Speed" Movie.
+                        </span>
+                      </span>
+                      <span class="mdl-list__item-secondary-content">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="#"><i class="material-icons">star</i></a>
+                      </span>
+                    </li>
+                    <li class="mdl-list__item mdl-list__item--three-line">
+                      <span class="mdl-list__item-primary-content">
+                        <i class="material-icons  mdl-list__item-avatar">person</i>
+                        <span>Bob Odenkirk</span>
+                        <span class="mdl-list__item-text-body">
+                          Bob Odinkrik played the role of Saul in Breaking Bad. Due to public fondness for the
+                          character, Bob stars in his own show now, called "Better Call Saul".
+                        </span>
+                      </span>
+                      <span class="mdl-list__item-secondary-content">
+                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="#"><i class="material-icons">star</i></a>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                </section>
+
+
+
+                <!-- Footer -->
+                <footer class="mdl-mega-footer">
+                  <div class="mdl-mega-footer__middle-section">
+
+                    <div class="mdl-mega-footer__drop-down-section">
+                      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                      <h1 class="mdl-mega-footer__heading">Features</h1>
+                      <ul class="mdl-mega-footer__link-list">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="updates.html">Updates</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="mdl-mega-footer__drop-down-section">
+                      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                      <h1 class="mdl-mega-footer__heading">Details</h1>
+                      <ul class="mdl-mega-footer__link-list">
+                        <li><a href="specs.html">Specs</a></li>
+                        <li><a href="tools.html">Tools</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="mdl-mega-footer__drop-down-section">
+                      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                      <h1 class="mdl-mega-footer__heading">Technology</h1>
+                      <ul class="mdl-mega-footer__link-list">
+                        <li><a href="how-it-works.html">How it works</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="join-with-us.html">Join with our Team</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="mdl-mega-footer__drop-down-section">
+                      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                      <h1 class="mdl-mega-footer__heading">FAQ</h1>
+                      <ul class="mdl-mega-footer__link-list">
+                        <li><a href="forum.html">Questions | Forum</a></li>
+                        <li><a href="forum.html">Answers | Forum</a></li>
+                        <li><a href="contact-us.html">Contact us</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="mdl-mega-footer__drop-down-section">
+                      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+                      <h1 class="mdl-mega-footer__heading">For Teachers</h1>
+                        <ul class="mdl-mega-footer__link-list">
+                          <li><a href="teachers/track-students.html">Track Students</a></li>
+                          <li><a href="teachers/update.html">Smarter Way to Work</a></li>
+                          <li><a href="teachers/syllabus.html">Even not to stress</a></li>
+                        </ul>
+                    </div>
+
+                  </div>
+
+                  <div class="mdl-mega-footer__bottom-section footer-logoAlign">
+                    <ul class="mdl-mega-footer__link-list">
+                      <li><a href="contact-us.html">Contact</a></li>
+                      <li><a href="terms.html">Privacy & Terms</a></li>
+                    </ul>
+
+
+                    <div class="mdl-logo footer-logoAlignIcon"><i class="material-icons">bubble_chart</i> <span><b>Edu</b>Socio<span></div>
+                  </div>
+                  <div class="footer-logoAlign2">
+                      <h4>Made with &hearts; by <b>Mayank Patel</b></h4>
+                  </div>
+
+                </footer>
+              </div>
+            </main>
+            </div>
+      		</div>
+
+      	</div>
+  </body>
+</html>

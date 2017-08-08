@@ -1,0 +1,326 @@
+<section id="card" class="hero">
+  <div class="mdc-card demo-card">
+    <section class="mdc-card__media demo-card__16-9-media"></section>
+    <section class="mdc-card__primary">
+      <h1 class="mdc-card__title mdc-card__title--large">Title goes here</h1>
+      <h2 class="mdc-card__subtitle">Subtitle here</h2>
+    </section>
+    <section class="mdc-card__actions">
+      <button class="mdc-button mdc-button--compact mdc-card__action">Action 1</button>
+      <button class="mdc-button mdc-button--compact mdc-card__action">Action 2</button>
+    </section>
+  </div>
+</section>
+
+\\\\\\\\\\\\\\\\\\\\\\\\
+
+\\\\\\\\\\\\\\\\\\\\\\\\\
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Web Starter Kit">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#2F3BA2">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <!-- Material Design icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Your styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <script type="text/javascript" src="styles/main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+
+
+    <title>EduSocio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+  </head>
+  <body class="demo">
+
+        <div id="demo-content">
+
+      		<div id="loader-wrapper">
+      			<div id="loader"></div>
+
+      			<div class="loader-section section-left"></div>
+                  <div class="loader-section section-right"></div>
+
+      		</div>
+
+      		<div id="content">
+            <!-- Uses a header that contracts as the page scrolls down. -->
+            <div class="demo-layout-waterfall mdl-layout mdl-js-layout">
+            <header class="mdl-layout__header mdl-layout__header--waterfall">
+              <!-- Top row, always visible -->
+              <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title"><b>Edu</b>Socio - A Students Panel</span>
+                <div class="mdl-layout-spacer"></div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                            mdl-textfield--floating-label mdl-textfield--align-right">
+                  <label class="mdl-button mdl-js-button mdl-button--icon"
+                         for="waterfall-exp">
+                    <i class="material-icons">search</i>
+                  </label>
+                  <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" name="sample"
+                           id="waterfall-exp">
+                  </div>
+                </div>
+              </div>
+              <!-- Bottom row, not visible on scroll -->
+              <div class="mdl-layout__header-row">
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation -->
+                <nav class="mdl-navigation">
+                  <a class="mdl-navigation__link" href="">Home</a>
+                  <a class="mdl-navigation__link" href="">Link</a>
+                  <a class="mdl-navigation__link" href="">Link</a>
+                  <a class="mdl-navigation__link" href="">Link</a>
+                </nav>
+              </div>
+            </header>
+            <div class="mdl-layout__drawer">
+              <span class="mdl-layout-title"><b>Edu</b>Socio</span>
+              <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+              </nav>
+            </div>
+            <main class="mdl-layout__content">
+              <div class="page-content">
+
+
+
+                <div style="max-width:500px">
+                  <img class="mySlides img" src="images/edusocio-one.jpeg">
+                  <img class="mySlides img" src="images/edusocio-two.jpeg" >
+                  <img class="mySlides img" src="images/edusocio-three.jpeg">
+                </div>
+
+                <script>
+                var myIndex = 0;
+                carousel();
+
+                function carousel() {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    for (i = 0; i < x.length; i++) {
+                       x[i].style.display = "none";
+                    }
+                    myIndex++;
+                    if (myIndex > x.length) {myIndex = 1}
+                    x[myIndex-1].style.display = "block";
+                    setTimeout(carousel, 5000); // Change image every 2 seconds
+                }
+                </script>
+
+              </div>
+            </main>
+            </div>
+      		</div>
+
+      	</div>
+      	<!-- /Demo content -->
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  </body>
+</html>
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+/* LOADER*/
+.eye{
+  width: 20px; height: 8px;
+  background-color: #eee;
+  border-radius:0px 0px 20px 20px;
+  position: relative;
+  top: 40px;
+  left: 10px;
+  box-shadow:  40px 0px 0px 0px #eee;
+}
+
+.head{
+  -webkit-backface-visibility: hidden;
+  position: relative;
+  margin: -250px auto;
+  width: 80px; height: 80px;
+  background-color: #111;
+  border-radius:50px;
+  box-shadow: inset -4px 2px 0px 0px #eee;
+    -webkit-animation:node 1.5s infinite alternate;
+  -webkit-animation-timing-function:ease-out;
+}
+.body{
+  position: relative;
+  margin: 90px auto;
+  width: 140px; height: 120px;
+  background-color: #111;
+  border-radius: 50px/25px ;
+  box-shadow: inset -5px 2px 0px 0px #eee;
+  -webkit-animation:node2 1.5s infinite alternate;
+  -webkit-animation-timing-function:ease-out;
+}
+
+  @-webkit-keyframes node
+      {
+         0%{ top:0px; }
+         50%{ top:10px; }
+         100% { top:0px;}
+       }
+
+  @-webkit-keyframes node2
+      {
+         0%{ top:-5px; }
+         50%{ top:10px; }
+         100% { top:-5px;}
+       }
+
+.circ{
+  -webkit-backface-visibility: hidden;
+   margin: 60px auto;
+  width: 180px; height: 180px;
+  background-color: #111;
+  border-radius: 0px 0px 50px 50px;
+  position: relative;
+  z-index: -1;
+  left: 0%;
+  top: 20%;
+  overflow: hidden;
+}
+
+.hands{
+  -webkit-backface-visibility: hidden;
+  margin-top: 140px;
+  width: 120px;height: 120px;
+  position: absolute;
+  background-color: #111;
+  border-radius:20px;
+  box-shadow:-1px -4px 0px 0px #eee;
+  -webkit-transform:rotate(45deg);
+  top:75%;left: 16%;
+  z-index: 1;
+  -webkit-animation:node2 1.5s infinite alternate;
+  -webkit-animation-timing-function:ease-out;
+}
+
+.load{  position: absolute;
+  width: 100px; height: 20px;
+   margin: -10px auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size:30px;
+  font-weight:400;
+  color:#eee;
+  left: 10%;
+  top: 5%;
+}
+
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #222222;
+    z-index: 1000;
+}
+
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+}
+#loader {
+    z-index: 1001; /* anything higher than z-index: 1000 of .loader-section */
+}
+h1 {
+    color: #EEEEEE;
+}
+/* Loaded */
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(-100%);  /* IE 9 */
+    transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+    -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(100%);  /* IE 9 */
+    transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
+}
+.loaded #loader {
+    opacity: 0;
+}
+.loaded #loader-wrapper {
+    visibility: hidden;
+}
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+
+    -webkit-transition: all 0.3s 0.3s ease-out;
+            transition: all 0.3s 0.3s ease-out;
+}
+.loaded #loader-wrapper {
+        -webkit-transform: translateY(-100%);
+            -ms-transform: translateY(-100%);
+                transform: translateY(-100%);
+
+        -webkit-transition: all 0.3s 0.6s ease-out;
+                transition: all 0.3s 0.6s ease-out;
+}
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+                transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+.loaded #loader-wrapper {
+        -webkit-transform: translateY(-100%);
+            -ms-transform: translateY(-100%);
+                transform: translateY(-100%);
+
+        -webkit-transition: all 0.3s 1s ease-out;
+                transition: all 0.3s 1s ease-out;
+}

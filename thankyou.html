@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thank You for using EduSocio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- Firebase -->
+    <script   src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <link rel="shortcut icon" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyD7iTuQUsBWq1Rxi9f-OTsLcyCN7_MfWWw",
+        authDomain: "edusocio-ef966.firebaseapp.com",
+        databaseURL: "https://edusocio-ef966.firebaseio.com",
+        projectId: "edusocio-ef966",
+        storageBucket: "edusocio-ef966.appspot.com",
+        messagingSenderId: "876204725574"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <link rel="stylesheet" href="styles/Register.css">
+    <link rel="stylesheet" href="https://www.google.com/css/maia.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" href="styles/startActivity.css">
+    <script type="text/javascript" src="styles/startActivity.js"></script>
+  </head>
+  <body class="bg">
+    <div id="maia-main" >
+      <div class="es-title">
+      </div>
+      <div class="maia-cols">
+        <div class="maia-col-8">
+          <h2 class="logoStart"><b>Edu</b>Socio</h2>
+          <p>Thank you for using <b>EduSocio</b> hope you have enjoyed really much. Come Back Soon.</p>
+          <span>Login from here again if you wish to!</span><br>
+          <!-- Accent-colored raised button with ripple -->
+          <button onclick="window.location.assign('login.html');" class="spanmargin mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Login
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

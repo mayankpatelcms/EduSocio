@@ -1,0 +1,28 @@
+[debug] [2017-07-28T14:43:01.303Z] ----------------------------------------------------------------------
+[debug] [2017-07-28T14:43:01.309Z] Command:      C:\Program Files\nodejs\node.exe C:\Users\Mayank\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-07-28T14:43:01.310Z] CLI Version:  3.9.1
+[debug] [2017-07-28T14:43:01.310Z] Platform:     win32
+[debug] [2017-07-28T14:43:01.310Z] Node Version: v6.9.4
+[debug] [2017-07-28T14:43:01.311Z] Time:         Fri Jul 28 2017 07:43:01 GMT-0700 (Pacific Daylight Time)
+[debug] [2017-07-28T14:43:01.311Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-07-28T14:43:01.342Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-28T14:43:01.343Z] > authorizing via signed-in user
+[debug] [2017-07-28T14:43:01.349Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/edusocio-ef966  
+ Fri Jul 28 2017 07:43:01 GMT-0700 (Pacific Daylight Time)
+[debug] [2017-07-28T14:43:03.167Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-28T14:43:03.171Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/edusocio-ef966/tokens  
+ Fri Jul 28 2017 07:43:03 GMT-0700 (Pacific Daylight Time)
+[debug] [2017-07-28T14:43:04.632Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Mayank\Videos\More\EduSocio'...
+[info] 
+[debug] [2017-07-28T14:43:04.647Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/edusocio-ef966  
+ Fri Jul 28 2017 07:43:04 GMT-0700 (Pacific Daylight Time)
+[debug] [2017-07-28T14:43:06.419Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-28T14:43:06.421Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/876204725574/clients/_:getWebAppConfig  
+ Fri Jul 28 2017 07:43:06 GMT-0700 (Pacific Daylight Time)
+[debug] [2017-07-28T14:43:08.547Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: firebase use --add
+[info] +  hosting: Local server: http://localhost:5000
+

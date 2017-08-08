@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE html>
+<html class="google" dir="ltr">
+<meta charset="utf-8">
+<meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+<title>EduSocio - Sign Up</title>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto:300" rel="stylesheet">
+<link rel="stylesheet" href="https://www.google.com/css/maia.css">
+<link rel="shortcut icon" href="images/touch/chrome-touch-icon-192x192.png">
+
+<style media="screen">
+  .maia-form-promo {
+    display: none;
+  }
+</style>
+  <link rel="stylesheet" href="styles/Register.css">
+  <script type="text/javascript" src="https://services.google.com/fb/js/fbox_script.js"></script>
+  <script type="text/javascript" src="styles/register.js"></script>
+  <!-- Firebase -->
+  <script   src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyD7iTuQUsBWq1Rxi9f-OTsLcyCN7_MfWWw",
+      authDomain: "edusocio-ef966.firebaseapp.com",
+      databaseURL: "https://edusocio-ef966.firebaseio.com",
+      projectId: "edusocio-ef966",
+      storageBucket: "edusocio-ef966.appspot.com",
+      messagingSenderId: "876204725574"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+<body>
+
+<div id="maia-main">
+
+  <div class="es-title">
+
+  </div>
+
+  <div class="maia-cols">
+    <div class="maia-col-8">
+<h2 class="logo"><b>Edu</b>Socio</h2>
+
+<p>Sign up with <b>EduSocio</b> and get work updates delivered. <span>*Required</span></p>
+
+
+<!-- Textfield with Floating Label -->
+
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="userName">
+    <label class="mdl-textfield__label" for="userName">Name...</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="email" id="userEmail">
+    <label class="mdl-textfield__label" for="userEmail">Email...</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="password" id="userPassword">
+    <label class="mdl-textfield__label" for="userPassword">Password...</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="number" id="userClass">
+    <label class="mdl-textfield__label" for="userClass">Class...</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="userSection">
+    <label class="mdl-textfield__label" for="userSection">Section...</label>
+  </div>
+  <!-- Numeric Textfield with Floating Label -->
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="userRollNo">
+    <label class="mdl-textfield__label" for="userRollNo">Roll No...</label>
+    <span class="mdl-textfield__error">Input is not a number!</span>
+  </div>
+  <!-- Colored raised button -->
+  <button id="quickstart-sign-up"class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+    Sign Up
+  </button>
+  <span><b><input type="text" style="display: none;"></span><span> Already have a account? <a href="login.html">Login to your Account</a></span></b>
+
+<script type="text/javascript">
+
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      window.location.assign('emailVerify.html');
+    } else {
+
+    }
+  });
+
+
+/**
+ * Handles the sign up button press.
+ */
+function handleSignUp() {
+  var email = document.getElementById('userEmail').value;
+  var password = document.getElementById('userPassword').value;
+  if (email.length < 4) {
+    alert('Please enter an email address.');
+    return;
+  }
+  if (password.length < 4) {
+    alert('Please enter a password.');
+    return;
+  }
+  // Sign in with email and pass.
+  // [START createwithemail]
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // [START_EXCLUDE]
+    if (errorCode == 'auth/weak-password') {
+      alert('The password is too weak.');
+    } else {
+
+    }
+    console.log(error);
+    // [END_EXCLUDE]
+  });
+  // [END createwithemail]
+}
+
+  var el = document.getElementById('quickstart-sign-up');
+  if (el) {
+    el.addEventListener('click', handleSignUp, false);
+  }
+
+</script>
+
+
+
+
+
+
+    </div>
+  </div>
+</div>
